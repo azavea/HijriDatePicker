@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements HijriCalendarView
                         .setOnDateSetListener(MainActivity.this)
                         .setMinMaxHijriYear(1430,1450)
                         .setMinMaxGregorianYear(2013,2020)
+                        //.setUILanguage(HijriCalendarDialog.Language.Arabic)
                         .setMode(HijriCalendarDialog.Mode.Hijri)
                         .setDefaultHijriDate(8, 0, 1437)//months start from 0
                         .setEnableScrolling(false)
