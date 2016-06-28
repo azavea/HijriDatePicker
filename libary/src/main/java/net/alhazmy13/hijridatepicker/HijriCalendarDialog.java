@@ -96,7 +96,7 @@ public class HijriCalendarDialog {
             return this;
         }
 
-        public  HijriCalendarDialog.Builder setOnDateSetListener(HijriCalendarView.OnDateSetListener onDateSetListener){
+        public HijriCalendarDialog.Builder setOnDateSetListener(HijriCalendarView.OnDateSetListener onDateSetListener){
             GeneralAttribute.onDateSetListener = onDateSetListener;
             return this;
         }
