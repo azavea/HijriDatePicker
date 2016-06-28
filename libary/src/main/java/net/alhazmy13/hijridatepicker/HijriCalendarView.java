@@ -40,7 +40,7 @@ public class HijriCalendarView extends Dialog implements MonthDialog.OnMonthChan
     private TableRow daysHeader;
 
 
-    public interface OnDateSetListener{
+    public interface OnDateSetListener {
         @Deprecated
         void onDateSet(int year, int month, int day);
     }

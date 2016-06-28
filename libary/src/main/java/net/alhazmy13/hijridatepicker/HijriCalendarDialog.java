@@ -14,10 +14,9 @@ import android.content.Context;
  */
 public class HijriCalendarDialog {
 
-    public HijriCalendarDialog(){
+    public HijriCalendarDialog() {}
 
-    }
-   public enum Mode{
+    public enum Mode {
         Hijri(1),
         Gregorian(2);
         private int mode;
@@ -30,7 +29,7 @@ public class HijriCalendarDialog {
 
     }
 
-    public enum Language{
+    public enum Language {
         Arabic(1),
         English(2),
         Default(3);
@@ -43,7 +42,8 @@ public class HijriCalendarDialog {
         }
 
     }
-    public static class  Builder{
+
+    public static class  Builder {
         public Builder(Context context) {
             GeneralAttribute.mContext=context;
             GeneralAttribute.title="";
@@ -76,12 +76,12 @@ public class HijriCalendarDialog {
         }
 
         public HijriCalendarDialog.Builder setMaxGregorianYear(int maxYear) {
-            GeneralAttribute.gregorian_max=maxYear;
+            GeneralAttribute.gregorian_max = maxYear;
             return this;
         }
 
         public HijriCalendarDialog.Builder setMinGregorianYear(int minYear) {
-            GeneralAttribute.gregorian_min=minYear;
+            GeneralAttribute.gregorian_min = minYear;
             return this;
         }
 
@@ -95,18 +95,27 @@ public class HijriCalendarDialog {
             GeneralAttribute.language = language.getLanguageValue();
             return this;
         }
+
         public  HijriCalendarDialog.Builder setOnDateSetListener(HijriCalendarView.OnDateSetListener onDateSetListener){
             GeneralAttribute.onDateSetListener = onDateSetListener;
             return this;
         }
-        public HijriCalendarDialog.Builder show(){
+
+
+        public HijriCalendarView build() {
+            return new HijriCalendarView(GeneralAttribute.mContext);
+        }
+
+        public HijriCalendarDialog.Builder show() {
             new HijriCalendarView(GeneralAttribute.mContext).show();
             return this;
         }
+
         public HijriCalendarDialog.Builder setMode(Mode mode){
             GeneralAttribute.mode = mode;
             return this;
         }
+
         public HijriCalendarDialog.Builder setDefaultHijriDate(int day, int month, int year){
             if (month>11 || month<0)
                 throw new RuntimeException("Month must be between 0-11");
